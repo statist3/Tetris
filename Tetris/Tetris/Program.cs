@@ -14,12 +14,23 @@ namespace Tetris
             Console.SetWindowSize(40, 30);
             Console.SetBufferSize(40, 30);
 
-            Square s = new Square(2, 5, '*');
+            FigureGenerator generator = new FigureGenerator(20,0, '*');
+
+            Figure s = generator.GetNewFigure();
+            s.Draw();
+            Thread.Sleep(500);
+            s.Hide();
+            s.Rotate();
             s.Draw();
 
             Thread.Sleep(500);
             s.Hide();
             s.Move(Direction.LEFT);
+            s.Draw();
+
+            Thread.Sleep(500);
+            s.Hide();
+            s.Rotate();
             s.Draw();
 
             Thread.Sleep(500);
