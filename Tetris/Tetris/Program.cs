@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -15,40 +16,29 @@ namespace Tetris
             Console.SetBufferSize(40, 30);
 
             FigureGenerator generator = new FigureGenerator(20,0, '*');
+            Figure s;
 
-            Figure s = generator.GetNewFigure();
-            s.Draw();
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.LEFT);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Rotate();
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.DOWN);
-            s.Draw();
-
-            Thread.Sleep(500);
-            s.Hide();
-            s.Move(Direction.RIGHT);
-            s.Draw();
+            while (true)
+            {
+                FigureFall(out s, generator);
+                s.Draw();
+            }
 
             Console.ReadLine();
+        }
+
+        static void FigureFall(out Figure fig, FigureGenerator generator)
+        {
+            fig = generator.GetNewFigure();
+            fig.Draw();
+
+            for (int i = 0; i < 15; i++)
+            {
+                fig.Hide();
+                fig.Move(Direction.DOWN);
+                fig.Draw();
+                Thread.Sleep(200);
+            }
         }
 
     }
