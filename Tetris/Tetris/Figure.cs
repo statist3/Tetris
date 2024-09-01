@@ -39,7 +39,7 @@ namespace Tetris
         {
             foreach(var p in pList)
             {
-                if(p.x < 0 || p.y < 0 || p.x >= 40 || p.y >= 30)
+                if(p.x < 0 || p.y < 0 || p.x >= Field.HEIGHT || p.y >= Field.WIDTH)
                     return false;
             }
             return true;
@@ -85,8 +85,18 @@ namespace Tetris
             }
         }
 
-        public abstract void Rotate();
+        public abstract void Rotate(Point[] pList);
 
+        internal void TryRotate()
+        {
+            Hide();
+            var clone = Clone();
+            Rotate(clone);
 
+            if(VerifyPosition(clone))
+            { points = clone; }
+
+            Draw();
+        }
     }
 }
