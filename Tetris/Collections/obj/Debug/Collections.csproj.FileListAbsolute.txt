@@ -1,0 +1,11 @@
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Collections.exe.config
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Collections.exe
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Collections.pdb
+D:\repos\Tetris\Tetris\Collections\obj\Debug\Collections.csproj.AssemblyReference.cache
+D:\repos\Tetris\Tetris\Collections\obj\Debug\Collections.csproj.CoreCompileInputs.cache
+D:\repos\Tetris\Tetris\Collections\obj\Debug\Collections.exe
+D:\repos\Tetris\Tetris\Collections\obj\Debug\Collections.pdb
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Tetris.exe
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Tetris.pdb
+D:\repos\Tetris\Tetris\Collections\bin\Debug\Tetris.exe.config
+D:\repos\Tetris\Tetris\Collections\obj\Debug\Collections.csproj.CopyComplete

@@ -7,46 +7,43 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Timers;
 using static System.Net.Mime.MediaTypeNames;
+using Microsoft.SmallBasic.Library;
 
 namespace Tetris
 {
     internal class Program
     {
-        const int TIMER_INTERVAL = 500;
+        static int TIMER_INTERVAL = 500;
+
+        static Object lockObj = new Object();
+
         static System.Timers.Timer timer;
-        static private Object _lockObject = new object();
-
-
         static Figure currentFigure;
-        static FigureGenerator generator;
+        static FigureGenerator factory = new FigureGenerator(Field.Width / 2, 0);
+        static bool gameOver = false;
         static void Main(string[] args)
         {
             DrawerProvider.Drawer.InitField();
 
 
-            //Field.Width = 20;
-
-
-            generator = new FigureGenerator(Field.Width/2,0);
-            currentFigure = generator.GetNewFigure();
             SetTimer();
 
-/*            var i = 1; // int i = 1;
-            var s = "привет"; // string s = "привет";*/
+            currentFigure = factory.GetNewFigure();
+            currentFigure.Draw();
+            GraphicsWindow.KeyDown += GraphicsWindow_KeyDown;
 
-            while (true)
-            {
-                if(Console.KeyAvailable)
-                {
-                    var key = Console.ReadKey();
-                    Monitor.Enter(_lockObject);
-                    var result = HandleKey(currentFigure, key.Key);
-                    ProcessResult(result, ref currentFigure);
-                    Monitor.Exit(_lockObject);
-                }
-            }
+        }
 
-            //Console.ReadLine();
+
+        private static void GraphicsWindow_KeyDown()
+        {
+            Monitor.Enter(lockObj);
+            var result = HandleKey(currentFigure, GraphicsWindow.LastKey);
+
+            if (GraphicsWindow.LastKey == "Down")
+                gameOver = ProcessResult(result, ref currentFigure);
+
+            Monitor.Exit(lockObj);
         }
 
         private static void Test()
@@ -67,10 +64,13 @@ namespace Tetris
 
         private static void OnTimedEvent(object sender, ElapsedEventArgs e)
         {
-            Monitor.Enter(_lockObject);
+            Monitor.Enter(lockObj);
             var result = currentFigure.TryMove(Direction.DOWN);
-            ProcessResult(result, ref currentFigure);
-            Monitor.Exit(_lockObject);
+            gameOver = ProcessResult(result, ref currentFigure);
+            if (gameOver)
+                timer.Stop();
+
+            Monitor.Exit(lockObj);
         }
 
         private static bool ProcessResult(Result result, ref Figure currentFigure)
@@ -83,34 +83,29 @@ namespace Tetris
                 if(currentFigure.IsOnTop())
                 {
                     DrawerProvider.Drawer.WriteGameOver();
-                    timer.Elapsed -= OnTimedEvent;
                     return true;
                 }
                 else
                 {
-                    currentFigure = generator.GetNewFigure();
+                    currentFigure = factory.GetNewFigure();
                     return false;
                 }
-
-
-                currentFigure = generator.GetNewFigure();
-                return true;
             }
             else
                 return false;
         }
 
-        private static Result HandleKey(Figure f, ConsoleKey key)
+        private static Result HandleKey(Figure f, String key)
         {
             switch(key)
             {
-                case ConsoleKey.LeftArrow:
+                case "Left":
                     return f.TryMove(Direction.LEFT);
-                case ConsoleKey.RightArrow:
+                case "Right":
                     return f.TryMove(Direction.RIGHT);
-                case ConsoleKey.DownArrow:
+                case "Down":
                     return f.TryMove(Direction.DOWN);
-                case ConsoleKey.Spacebar:
+                case "Space":
                     return f.TryRotate();
             }
 

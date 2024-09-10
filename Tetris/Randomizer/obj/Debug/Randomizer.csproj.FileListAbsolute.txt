@@ -1,0 +1,7 @@
+D:\repos\Tetris\Tetris\Randomizer\bin\Debug\Randomizer.exe.config
+D:\repos\Tetris\Tetris\Randomizer\bin\Debug\Randomizer.exe
+D:\repos\Tetris\Tetris\Randomizer\bin\Debug\Randomizer.pdb
+D:\repos\Tetris\Tetris\Randomizer\obj\Debug\Randomizer.csproj.AssemblyReference.cache
+D:\repos\Tetris\Tetris\Randomizer\obj\Debug\Randomizer.csproj.CoreCompileInputs.cache
+D:\repos\Tetris\Tetris\Randomizer\obj\Debug\Randomizer.exe
+D:\repos\Tetris\Tetris\Randomizer\obj\Debug\Randomizer.pdb

@@ -15,30 +15,6 @@ namespace Tetris
         public void Draw()
         {
             DrawerProvider.Drawer.DrawPoint(X, Y);
-            Console.SetCursorPosition(X,Y);
-            Console.Write(C);
-            Console.SetCursorPosition(0, 0);
-        }
-
-        internal void Move(Direction dir)
-        {
-            switch(dir)
-            {
-                case Direction.DOWN:
-                    Y += 1;
-                    break;
-                case Direction.LEFT:
-                    X -= 1;
-                    break;
-                case Direction.RIGHT:
-                    X += 1;
-                    break;
-            }
-        }
-
-        internal void Hide()
-        {
-            DrawerProvider.Drawer.HidePoint(X, Y);
         }
 
         public Point(Point p)
@@ -54,6 +30,32 @@ namespace Tetris
             Y = b;
             C = sym;
         }
+
+        internal void Move(Direction dir)
+        {
+            switch(dir)
+            {
+                case Direction.DOWN:
+                    Y += 1;
+                    break;
+                case Direction.LEFT:
+                    X -= 1;
+                    break;
+                case Direction.RIGHT:
+                    X += 1;
+                    break;
+                case Direction.UP:
+                    Y -= 1;
+                    break;
+            }
+        }
+
+        internal void Hide()
+        {
+            DrawerProvider.Drawer.HidePoint(X, Y);
+        }
+
+
 
         public Point()
         {

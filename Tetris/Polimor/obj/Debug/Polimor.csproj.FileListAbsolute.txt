@@ -1,0 +1,7 @@
+D:\repos\Tetris\Tetris\Polimor\bin\Debug\Polimor.exe.config
+D:\repos\Tetris\Tetris\Polimor\bin\Debug\Polimor.exe
+D:\repos\Tetris\Tetris\Polimor\bin\Debug\Polimor.pdb
+D:\repos\Tetris\Tetris\Polimor\obj\Debug\Polimor.csproj.AssemblyReference.cache
+D:\repos\Tetris\Tetris\Polimor\obj\Debug\Polimor.csproj.CoreCompileInputs.cache
+D:\repos\Tetris\Tetris\Polimor\obj\Debug\Polimor.exe
+D:\repos\Tetris\Tetris\Polimor\obj\Debug\Polimor.pdb

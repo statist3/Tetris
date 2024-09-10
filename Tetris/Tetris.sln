@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polimor", "Polimor\Polimor.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Randomizer", "Randomizer\Randomizer.csproj", "{6AF8C529-77F8-4380-85CE-E80CC062A540}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TetrisGui", "TetrisGui\TetrisGui.csproj", "{268DAEC1-793A-4545-9D8C-F5EA15C1AF15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6AF8C529-77F8-4380-85CE-E80CC062A540}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AF8C529-77F8-4380-85CE-E80CC062A540}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AF8C529-77F8-4380-85CE-E80CC062A540}.Release|Any CPU.Build.0 = Release|Any CPU
+		{268DAEC1-793A-4545-9D8C-F5EA15C1AF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{268DAEC1-793A-4545-9D8C-F5EA15C1AF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{268DAEC1-793A-4545-9D8C-F5EA15C1AF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{268DAEC1-793A-4545-9D8C-F5EA15C1AF15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,7 @@
+D:\repos\Tetris\Tetris\Enums\bin\Debug\Enums.exe.config
+D:\repos\Tetris\Tetris\Enums\bin\Debug\Enums.exe
+D:\repos\Tetris\Tetris\Enums\bin\Debug\Enums.pdb
+D:\repos\Tetris\Tetris\Enums\obj\Debug\Enums.csproj.AssemblyReference.cache
+D:\repos\Tetris\Tetris\Enums\obj\Debug\Enums.csproj.CoreCompileInputs.cache
+D:\repos\Tetris\Tetris\Enums\obj\Debug\Enums.exe
+D:\repos\Tetris\Tetris\Enums\obj\Debug\Enums.pdb

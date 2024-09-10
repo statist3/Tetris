@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tetris
 {
-    enum Direction
+    internal class Class1
     {
-        LEFT, RIGHT, DOWN, UP
+
     }
 }
